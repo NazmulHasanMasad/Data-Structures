@@ -1,12 +1,16 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
+#include <numeric>
+#include <bits/stdc++.h>
+
 using namespace std;
 int main()
 {
     vector<int> v;
     v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
+    v.push_back(100);
+    v.push_back(200);
 
     for (int i = 0; i < v.size(); i++)
     {
@@ -24,7 +28,6 @@ int main()
         cout << element << endl;
     }
 
-    v.pop_back();
     for (auto element : v)
     {
         cout << element << endl;
@@ -35,6 +38,15 @@ int main()
     {
         cout << element << endl;
     }
+
+    int sum = accumulate(v2.begin(), v2.end(), 0);
+    cout << sum << endl;
+
+    int max = *max_element(v.begin(), v.end());
+    cout << max << endl;
+
+    int min = *min_element(v.begin(), v.end());
+    cout << min << endl;
 
     return 0;
 }
